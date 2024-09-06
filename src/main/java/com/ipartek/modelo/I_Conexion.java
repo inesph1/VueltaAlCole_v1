@@ -19,7 +19,7 @@ public interface I_Conexion {
 	String PARTICIPANTE_EDAD="edad";
 	
 	//procedimientos almacenados
-	String SP_INSERTAR_PARTICIPANTE="call sp_sp_insertarParticipante(?, ?, ?);";
+	String SP_INSERTAR_PARTICIPANTE="call sp_insertarParticipante(?, ?, ?);";
 	String SP_OBTENER_TODOS_PARTICIPANTES="call sp_obtenerTodosParticipantes();"; 
 	
 	//Archivos JSP

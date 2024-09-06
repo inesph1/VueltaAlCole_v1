@@ -48,7 +48,7 @@ public class Participante {
 	}
 
 	public int getEdad() {
-		return edad;
+		return this.edad;
 	}
 
 	public void setEdad(int edad) {

@@ -47,18 +47,21 @@ public class AgregarParticipante extends HttpServlet implements I_Conexion{
 				
 				int edad=0;
 				if(request.getParameter("p_edad")!=null) {
+					System.out.println("No nulo");
 					try {
 						edad=Integer.parseInt(request.getParameter("p_edad"));
+						System.out.println(edad+"parseo");
 					} catch (NumberFormatException e) {
 						// TODO Auto-generated catch block
 						edad=0;
+						System.out.println("error parseo");
 					}
 				}
 				
 				
 				
 				//2 maquetar a objetos
-				Participante participanteInsertar= new Participante(0, nombre, apellidos, 0);
+				Participante participanteInsertar= new Participante(0, nombre, apellidos, edad);
 				
 				//3
 				DB_Helper db = new DB_Helper();

@@ -28,11 +28,11 @@ if (request.getAttribute(I_Conexion.ATR_LISTA_PARTICIPANTES) != null) {
 	<main>
 
 		<section>
-			<form action="" method="get">
-				<label for="">Nombre</label> <input type="text" id="" name="">
-				<br> <label for="">Apellidos</label> <input type="text" id=""
-					name=""> <br> <label for="">Edad</label>
-					<input type="number" id="" name=""> <input
+			<form action="AgregarParticipante" method="POST">
+				<label for="">Nombre</label> <input type="text" id="p_nombre" name="p_nombre">
+				<br> <label for="">Apellidos</label> <input type="text" id="p_apellidos"
+					name="p_apellidos"> <br> <label for="">Edad</label>
+					<input type="number" id="p_edad" name="p_edad"> <input
 					type="submit" value="Guardar">
 			</form>
 		</section>

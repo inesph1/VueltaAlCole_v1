@@ -91,6 +91,8 @@ public class DB_Helper implements I_Conexion, I_Metodos {
 
 	@Override
 	public int insertarParticipante(Connection con, Participante participanteInsertar) {
+		System.out.println("Entra");
+		System.out.println(participanteInsertar);
 
 		try {
 			// call sp_insertar_producto(nombre, apellidos, edad);
@@ -100,6 +102,7 @@ public class DB_Helper implements I_Conexion, I_Metodos {
 			cStmt.setString(2, participanteInsertar.getApellidos());
 			cStmt.setInt(3, participanteInsertar.getEdad());
 
+			
 			return cStmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("ERROR DE BD: INSERTAR");
