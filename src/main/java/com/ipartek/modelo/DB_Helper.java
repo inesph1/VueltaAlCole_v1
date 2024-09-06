@@ -1,8 +1,15 @@
 package com.ipartek.modelo;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import com.ipartek.modelo.dto.Participante;
+
+import java.util.ArrayList;
 
 public class DB_Helper implements I_Conexion, I_Metodos {
 
@@ -49,5 +56,39 @@ public class DB_Helper implements I_Conexion, I_Metodos {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public List<Participante> obtenerListaParticipantes(Connection con){
+		List<Participante>  listadoParticipantes = new ArrayList<Participante>();
+		
+		try {
+			CallableStatement cStmt = con.prepareCall(SP_OBTENER_TODOS_PARTICIPANTES);
+
+			boolean tieneSelect = cStmt.execute();
+			if(tieneSelect) {
+				
+				ResultSet rs = cStmt.getResultSet();
+
+				while (rs.next()) {
+				Participante participante = new Participante();
+				participante.setId(rs.getInt(PARTICIPANTE_ID));
+				participante.setNombre(rs.getString(PARTICIPANTE_NOMBRE));
+				participante.setApellidos(rs.getString(PARTICIPANTE_APELLIDOS));
+				participante.setEdad(rs.getInt(PARTICIPANTE_EDAD));
+				
+				listadoParticipantes.add(participante);
+				}
+				
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(listadoParticipantes);
+		return listadoParticipantes;
+	}
 
 }
+
+

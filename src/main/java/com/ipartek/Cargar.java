@@ -1,6 +1,8 @@
 package com.ipartek;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
 import java.sql.Connection;
 
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.modelo.DB_Helper;
 import com.ipartek.modelo.I_Conexion;
+import com.ipartek.modelo.dto.Participante;
 
 @WebServlet("/Cargar")
 public class Cargar extends HttpServlet implements I_Conexion {
@@ -27,6 +30,8 @@ public class Cargar extends HttpServlet implements I_Conexion {
 		DB_Helper db= new DB_Helper();
 		Connection con=db.conectar();
 		
+		List<Participante> listadoParticipantes = new ArrayList<Participante>();
+		listadoParticipantes = db.obtenerListaParticipantes(con);
 		
 		
 		
@@ -35,7 +40,7 @@ public class Cargar extends HttpServlet implements I_Conexion {
 		
 		
 		
-		
+		request.setAttribute(ATR_LISTA_PARTICIPANTES, listadoParticipantes);
 		request.getRequestDispatcher(JSP_INDEX).forward(request, response);
 	}
 
