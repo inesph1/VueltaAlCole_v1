@@ -31,7 +31,8 @@ if (request.getAttribute(I_Conexion.ATR_LISTA_PARTICIPANTES) != null) {
 			<form action="" method="get">
 				<label for="">Nombre</label> <input type="text" id="" name="">
 				<br> <label for="">Apellidos</label> <input type="text" id=""
-					name=""> <br> <label for="">Edad</label> <input
+					name=""> <br> <label for="">Edad</label>
+					<input type="number" id="" name=""> <input
 					type="submit" value="Guardar">
 			</form>
 		</section>
