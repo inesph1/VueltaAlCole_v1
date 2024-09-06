@@ -66,7 +66,7 @@ public class AgregarParticipante extends HttpServlet implements I_Conexion{
 
 				//4
 				int resultadoInsert=db.insertarParticipante(con, participanteInsertar);
-				List<Participante> listaParticipantes=db.obtenerTodosParticipantes(con);
+				List<Participante> listaParticipantes=db.obtenerListaParticipantes(con);
 		
 				
 				//5

@@ -110,10 +110,6 @@ public class DB_Helper implements I_Conexion, I_Metodos {
 
 	}
 
-	public List<Participante> obtenerTodosParticipantes(Connection con) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
 
