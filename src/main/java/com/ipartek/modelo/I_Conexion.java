@@ -32,7 +32,7 @@ public interface I_Conexion {
 	//Archivos JSP
 	String JSP_INDEX="index.jsp";
 
-
+	String ATR_LISTA_PARTICIPANTES = "atr_lista_participantes";
 
 
 	
