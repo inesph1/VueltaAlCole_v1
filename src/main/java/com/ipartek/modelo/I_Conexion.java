@@ -8,7 +8,7 @@ public interface I_Conexion {
 	String BASE_DATOS = "github_proyecto";
 	String DRIVER = "com.mysql.jdbc.Driver";
 	String CONEXION = "jdbc:mysql://192.168.0.98:3306/"+BASE_DATOS;
-	String USUARIO = "root";
+	String USUARIO = "Paula";
 	String PASS = "1234";
 	
 	//tablas y views de la BD
